@@ -5,37 +5,43 @@ This repository provides the official implementation of the paper:
 **"Reinforcement Learning-Based Layered Lossy Image Semantic Coding"**
 
 
-
-## 1. Test
-
+## Test with pre-trained model
 To test the model, follow these steps:
 
-1. Download the pre-trained weight file from the following Google Drive link:
+#### 1. Download RL Model Weights
 
-   [Pre-trained Weights](https://drive.google.com/uc?export=download&id=1vjv4-J-PEEjoriWibgcLZ1rHIzq8Nlke)
+Download the RL model weights and place them in the `checkpoints` folder.
 
-2. Place the downloaded weight file in the `checkpoints/` directory.
+[RL model](https://drive.google.com/uc?export=download&id=1vjv4-J-PEEjoriWibgcLZ1rHIzq8Nlke)
 
-3. Run the test script:
+#### 2. Download PSPNet Model Weights
 
-   ```bash
-   python test.py
-   ```
+Download the pre-trained PSPNet weights and place them in the `exp/cityscapes/pspnet101/model/` directory.
 
-## Full Workflow
+[PSPNet model](https://drive.google.com/uc?id=1FdQ_keCR1SjXtm1Co_BYV1wW3mf4fNx4)
 
-To run the full pipeline from semantic map to final encoded image:
+#### 3. Run the Test Script
+```bash
+python test.py
+```
 
-1. **Generate reconstructed images:**
-   - Follow the instructions in `semantic_image_synthesis/README.md` to generate reconstructed images from semantic maps.
 
-2. **Run the semantic coding framework:**
-   - Copy the generated images to `datasets/synthesized_image`.
-   - Run:
+## Train
 
-    ```bash
-    python train.py
-    ```
+#### 1. Prepare the Dataset
 
-The framework will perform reinforcement learning-based quantization and save the results in `Image Semantic Coding/output/`.
+Download the **Cityscapes** dataset and place it in the `datasets/cityscapes` directory.
+
+#### 2. Generate Images
+
+Follow the instructions in the `semantic_image_synthesis/README.md` to generate reconstructed images from semantic maps. 
+
+#### 3. Run the Training Script
+
+```bash
+python train.py 
+```
+
+
+
 
