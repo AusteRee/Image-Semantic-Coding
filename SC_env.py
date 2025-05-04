@@ -52,7 +52,7 @@ class SC():
         super(SC, self).__init__()
         self.action_space = [0, 99, 90, 80, 60]
         self.n_actions = len(self.action_space)
-        self.n_features = 2
+        self.n_features = 5
         self.device = torch.device('cuda')
         self.l1_norm = nn.L1Loss()
         self.l2_norm = nn.MSELoss()
